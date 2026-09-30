@@ -11,7 +11,7 @@
   <body
     class="bg-[var(--bg-primary)] min-h-screen text-[var(--color-primary)] p-4 md:p-6 flex flex-col md:flex-row gap-6 transition-colors duration-300 relative overflow-x-hidden md:overflow-x-visible"
   >
-    <!-- Overlay پس‌ زمینه حالت موبایل -->
+    <!-- Overlay Mobile mode fiels -->
     <div
       id="sidebar-overlay"
       class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40 md:hidden"
@@ -41,20 +41,20 @@
             />
           </div>
 
-          <div class="flex flex-col">
-            <span class="font-bold text-sm text-[var(--color-primary)]">
+          <div class="flex flex-col text-right">
+            <span class="font-bold text-base text-[var(--color-primary)]">
               سلام، رویا
             </span>
 
-            <!-- محتوای این تگ با جاوااسکریپت پر میشه -->
+            <!-- Desktop Date -->
             <span
               id="desktop-date"
-              class="text-[11px] text-[var(--color-primary-muted)] mt-0.5"
+              class="text-[13px] text-[var(--color-primary-muted)] mt-1"
             ></span>
           </div>
         </div>
 
-        <!-- دکمه بستن سایدبار در موبایل -->
+        <!-- Sidebar Closure Button -->
         <button
           id="close-sidebar-btn"
           aria-label="بستن منو"
@@ -81,10 +81,10 @@
         id="sidebar-nav"
         class="mt-3 space-y-1 flex-1 overflow-y-auto overscroll-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
       >
-        <!-- Item 1: خانه (فعال)-->
+        <!-- Item 1: Home (Active)-->
         <a
           href="#"
-          class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl bg-[var(--bg-hover-primary)] text-[var(--color-primary-blue)] font-semibold transition-colors"
+          class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl bg-[var(--bg-hover-primary)] text-[var(--color-primary-blue)] font-semibold transition-colors hover:bg-[var(--bg-hover-primary)]"
         >
           <!-- Icon: Home -->
           <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
@@ -93,7 +93,7 @@
           <span class="text-sm">خانه</span>
         </a>
 
-        <!-- Item 2: تسک‌ها -->
+        <!-- Item 2: Tasks -->
         <a
           href="#"
           class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] font-medium transition-colors"
@@ -115,7 +115,7 @@
           <span class="text-sm">تسک‌ها</span>
         </a>
 
-        <!-- Item 3: تقویم -->
+        <!-- Item 3: Calendar -->
         <a
           href="#"
           class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] font-medium transition-colors"
@@ -137,7 +137,7 @@
           <span class="text-sm">تقویم</span>
         </a>
 
-        <!-- Item 4: گزارشات -->
+        <!-- Item 4: Reports -->
         <a
           href="#"
           class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] font-medium transition-colors"
@@ -159,7 +159,7 @@
           <span class="text-sm">گزارشات</span>
         </a>
 
-        <!-- Item 5: تنظیمات -->
+        <!-- Item 5: Settings -->
         <a
           href="#"
           class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] font-medium transition-colors"
@@ -187,7 +187,7 @@
           <span class="text-sm">تنظیمات</span>
         </a>
 
-        <!-- Item 6: پشتیبانی -->
+        <!-- Item 6: Support -->
         <a
           href="#"
           class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] font-medium transition-colors"
@@ -209,7 +209,7 @@
           <span class="text-sm">پشتیبانی</span>
         </a>
 
-        <!-- Item 7: پروفایل -->
+        <!-- Item 7: Profile -->
         <a
           href="#"
           class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] font-medium transition-colors"
@@ -308,12 +308,75 @@
       </div>
     </aside>
 
-    <main>
+    <main class="flex-1 min-w-0">
       <!-- mobile header -->
-      <header></header>
+      <header
+        class="sticky top-0 z-30 -mt-4 pt-4 -mx-4 px-4 pb-3 bg-[var(--bg-primary)] md:hidden"
+      >
+        <div
+          class="flex items-center justify-between p-4 bg-[var(--card)] rounded-xl shadow-xs relative"
+        >
+          <div class="flex items-center gap-3">
+            <!-- hamburger btn -->
+            <button
+              id="hamburger-btn"
+              aria-label="منو"
+              class="p-2 text-[var(--color-primary)] hover:bg-[var(--btn-bg-muted)] rounded-xl transition-colors cursor-pointer"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- header -->
+          <span
+            class="absolute left-1/2 -translate-x-1/2 font-extrabold text-base text-[var(--color-primary)]"
+          >
+            کوئرا لیست
+          </span>
+        </div>
+      </header>
 
       <!-- mobile profile img and date -->
-      <div></div>
+      <div
+        class="flex md:hidden items-center justify-start gap-3 mt-6 mb-8 px-2 w-full"
+        dir="rtl"
+      >
+        <!-- profile -->
+        <div
+          class="relative w-12 h-12 rounded-full overflow-hidden bg-[var(--btn-bg-muted)] shrink-0"
+        >
+          <img
+            src="./assets/images/sara.png"
+            alt="profile"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <!-- name -->
+        <div class="flex flex-col text-right">
+          <span class="font-bold text-base text-[var(--color-primary)]">
+            سلام، رویا
+          </span>
+
+          <!-- date -->
+          <span
+            id="mobile-date"
+            class="text-[13px] text-[var(--color-primary-muted)] mt-1"
+          ></span>
+        </div>
+      </div>
 
       <div>
         <h2>تسک های امروز</h2>
