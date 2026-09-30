@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Yekan';
-  src: url('./assets/fonts/IRANYekanX-Regular.ttf') format('truetype');
+  font-family: "Yekan";
+  src: url("./assets/fonts/IRANYekanX-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -37,10 +37,11 @@
   --bg-primary: #060c18;
   --btn-bg-muted: #0c1b31;
   --btn-bg-diabled: #002247;
+  --bg-hover-primary: #0c1b31;
   /** Text Colors */
   --color-primary: #ffffff;
 }
 
 * {
-  font-family: 'Yekan', sans-serif;
+  font-family: "Yekan", sans-serif;
 }
