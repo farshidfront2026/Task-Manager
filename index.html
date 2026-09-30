@@ -20,226 +20,220 @@
     <!-- sidebar -->
     <aside
       id="sidebar"
-      class="fixed top-0 bottom-0 right-0 z-50 w-72 bg-[var(--card)] p-5 md:p-6 flex flex-col shadow-2xl md:shadow-sm rounded-none md:rounded-2xl shrink-0 transform translate-x-full transition-transform duration-300 md:translate-x-0 md:sticky md:top-6 md:bottom-auto md:self-start md:h-[calc(100vh-3rem)] overscroll-contain overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+      class="fixed top-0 bottom-0 right-0 z-50 w-72 bg-[var(--card)] p-5 md:p-6 flex flex-col shadow-2xl md:shadow-sm rounded-none md:rounded-2xl shrink-0 transform translate-x-full transition-transform duration-300 md:translate-x-0 md:sticky md:top-6 md:bottom-auto md:self-start md:h-[calc(100vh-3rem)] overflow-hidden"
     >
       <!-- Top Section -->
-      <div class="flex flex-col">
-        <!-- Sidebar Header -->
-        <div class="flex items-center justify-between pb-4">
-          <!-- Mobile: Quera List -->
-          <span
-            class="md:hidden font-bold text-base text-[var(--color-primary)]"
+      <div class="flex items-center justify-between pb-4 shrink-0">
+        <!-- Mobile: Quera List -->
+        <span class="md:hidden font-bold text-base text-[var(--color-primary)]">
+          کوئرا لیست
+        </span>
+
+        <!-- Desktop: User Profile -->
+        <div class="hidden md:flex items-center gap-3">
+          <div
+            class="relative w-11 h-11 rounded-full overflow-hidden bg-[var(--btn-bg-muted)] shrink-0"
           >
-            کوئرا لیست
-          </span>
-
-          <!-- Desktop: User Profile -->
-          <div class="hidden md:flex items-center gap-3">
-            <div
-              class="relative w-11 h-11 rounded-full overflow-hidden bg-[var(--btn-bg-muted)] shrink-0"
-            >
-              <img
-                src="./assets/images/sara.png"
-                alt="profile"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <div class="flex flex-col">
-              <span class="font-bold text-sm text-[var(--color-primary)]">
-                سلام، رویا
-              </span>
-
-              <!-- محتوای این تگ با جاوااسکریپت پر میشه -->
-              <span
-                id="desktop-date"
-                class="text-[11px] text-[var(--color-primary-muted)] mt-0.5"
-              ></span>
-            </div>
+            <img
+              src="./assets/images/sara.png"
+              alt="profile"
+              class="w-full h-full object-cover"
+            />
           </div>
 
-          <!-- دکمه بستن سایدبار در موبایل -->
-          <button
-            id="close-sidebar-btn"
-            aria-label="بستن منو"
-            class="md:hidden p-1.5 text-[var(--color-primary-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--btn-bg-muted)] rounded-xl transition-colors cursor-pointer"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"
-              ></path>
-            </svg>
-          </button>
+          <div class="flex flex-col">
+            <span class="font-bold text-sm text-[var(--color-primary)]">
+              سلام، رویا
+            </span>
+
+            <!-- محتوای این تگ با جاوااسکریپت پر میشه -->
+            <span
+              id="desktop-date"
+              class="text-[11px] text-[var(--color-primary-muted)] mt-0.5"
+            ></span>
+          </div>
         </div>
 
-        <!-- Navigation Links -->
-        <nav id="sidebar-nav" class="mt-3 space-y-1">
-          <!-- Item 1: خانه (فعال)-->
-          <a
-            href="#"
-            class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl bg-[var(--bg-hover-primary)] text-[var(--color-primary-blue)] font-semibold transition-colors"
+        <!-- دکمه بستن سایدبار در موبایل -->
+        <button
+          id="close-sidebar-btn"
+          aria-label="بستن منو"
+          class="md:hidden p-1.5 text-[var(--color-primary-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--btn-bg-muted)] rounded-xl transition-colors cursor-pointer"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
-            <!-- Icon: Home -->
-            <svg
-              class="w-5 h-5 shrink-0"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-            </svg>
-            <span class="text-sm">خانه</span>
-          </a>
-
-          <!-- Item 2: تسک‌ها -->
-          <a
-            href="#"
-            class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] font-medium transition-colors"
-          >
-            <!-- Icon: Tasks -->
-            <svg
-              class="w-5 h-5 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
-              ></path>
-            </svg>
-            <span class="text-sm">تسک‌ها</span>
-          </a>
-
-          <!-- Item 3: تقویم -->
-          <a
-            href="#"
-            class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] font-medium transition-colors"
-          >
-            <!-- Icon: Calendar -->
-            <svg
-              class="w-5 h-5 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-              ></path>
-            </svg>
-            <span class="text-sm">تقویم</span>
-          </a>
-
-          <!-- Item 4: گزارشات -->
-          <a
-            href="#"
-            class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] font-medium transition-colors"
-          >
-            <!-- Icon: Reports -->
-            <svg
-              class="w-5 h-5 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
-              ></path>
-            </svg>
-            <span class="text-sm">گزارشات</span>
-          </a>
-
-          <!-- Item 5: تنظیمات -->
-          <a
-            href="#"
-            class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] font-medium transition-colors"
-          >
-            <!-- Icon: Settings -->
-            <svg
-              class="w-5 h-5 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-              ></path>
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              ></path>
-            </svg>
-            <span class="text-sm">تنظیمات</span>
-          </a>
-
-          <!-- Item 6: پشتیبانی -->
-          <a
-            href="#"
-            class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] font-medium transition-colors"
-          >
-            <!-- Icon: Support -->
-            <svg
-              class="w-5 h-5 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
-              ></path>
-            </svg>
-            <span class="text-sm">پشتیبانی</span>
-          </a>
-
-          <!-- Item 7: پروفایل -->
-          <a
-            href="#"
-            class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] font-medium transition-colors"
-          >
-            <!-- Icon: Profile -->
-            <svg
-              class="w-5 h-5 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-              ></path>
-            </svg>
-            <span class="text-sm">پروفایل</span>
-          </a>
-        </nav>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
       </div>
 
-      <!-- Bottom Section-Theme Switcher & Logout -->
-      <div class="mt-auto pt-4">
+      <!-- Navigation Links -->
+      <nav
+        id="sidebar-nav"
+        class="mt-3 space-y-1 flex-1 overflow-y-auto overscroll-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+      >
+        <!-- Item 1: خانه (فعال)-->
+        <a
+          href="#"
+          class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl bg-[var(--bg-hover-primary)] text-[var(--color-primary-blue)] font-semibold transition-colors"
+        >
+          <!-- Icon: Home -->
+          <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+          </svg>
+          <span class="text-sm">خانه</span>
+        </a>
+
+        <!-- Item 2: تسک‌ها -->
+        <a
+          href="#"
+          class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] font-medium transition-colors"
+        >
+          <!-- Icon: Tasks -->
+          <svg
+            class="w-5 h-5 shrink-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+            ></path>
+          </svg>
+          <span class="text-sm">تسک‌ها</span>
+        </a>
+
+        <!-- Item 3: تقویم -->
+        <a
+          href="#"
+          class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] font-medium transition-colors"
+        >
+          <!-- Icon: Calendar -->
+          <svg
+            class="w-5 h-5 shrink-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+            ></path>
+          </svg>
+          <span class="text-sm">تقویم</span>
+        </a>
+
+        <!-- Item 4: گزارشات -->
+        <a
+          href="#"
+          class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] font-medium transition-colors"
+        >
+          <!-- Icon: Reports -->
+          <svg
+            class="w-5 h-5 shrink-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
+            ></path>
+          </svg>
+          <span class="text-sm">گزارشات</span>
+        </a>
+
+        <!-- Item 5: تنظیمات -->
+        <a
+          href="#"
+          class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] font-medium transition-colors"
+        >
+          <!-- Icon: Settings -->
+          <svg
+            class="w-5 h-5 shrink-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+            ></path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+            ></path>
+          </svg>
+          <span class="text-sm">تنظیمات</span>
+        </a>
+
+        <!-- Item 6: پشتیبانی -->
+        <a
+          href="#"
+          class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] font-medium transition-colors"
+        >
+          <!-- Icon: Support -->
+          <svg
+            class="w-5 h-5 shrink-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
+            ></path>
+          </svg>
+          <span class="text-sm">پشتیبانی</span>
+        </a>
+
+        <!-- Item 7: پروفایل -->
+        <a
+          href="#"
+          class="nav-item flex items-center gap-3 py-2.5 px-3 rounded-2xl text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] font-medium transition-colors"
+        >
+          <!-- Icon: Profile -->
+          <svg
+            class="w-5 h-5 shrink-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+            ></path>
+          </svg>
+          <span class="text-sm">پروفایل</span>
+        </a>
+      </nav>
+
+      <!-- Bottom Section (Theme Switcher & Logout - Fixed) -->
+      <div class="mt-auto pt-4 shrink-0">
         <!-- Light / Dark Mode Toggle Buttons Container -->
         <div
           class="bg-[var(--btn-bg-muted)] p-1 rounded-xl flex items-center justify-between"
@@ -249,7 +243,6 @@
             id="light-mode-btn"
             class="w-1/2 flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-[var(--card)] text-[var(--color-primary)] shadow-xs font-medium text-sm transition-all cursor-pointer hover:text-[var(--color-primary-blue)]"
           >
-            <!-- Icon: Sun-Light Mode -->
             <svg
               class="w-5 h-5 shrink-0 transition-colors duration-300"
               aria-hidden="true"
@@ -272,7 +265,6 @@
             id="dark-mode-btn"
             class="w-1/2 flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-transparent text-[var(--color-secondary-muted)] font-medium text-sm transition-all cursor-pointer hover:text-[var(--color-primary-blue)]"
           >
-            <!-- Icon: Moon-Dark Mode -->
             <svg
               class="w-5 h-5 shrink-0 transition-colors duration-300"
               aria-hidden="true"
@@ -298,7 +290,6 @@
           id="logout-btn"
           class="group w-full flex items-center gap-2.5 p-2.5 rounded-2xl font-medium text-[var(--color-primary-muted)] hover:bg-[var(--bg-hover-primary)] hover:text-[var(--error)] transition-colors cursor-pointer"
         >
-          <!-- Icon: Logout -->
           <svg
             class="w-5 h-5 text-[var(--color-primary-muted)] group-hover:text-[var(--error)] shrink-0 transition-colors"
             fill="none"
