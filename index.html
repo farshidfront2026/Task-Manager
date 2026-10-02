@@ -9,28 +9,28 @@
   </head>
 
   <body
-    class="bg-[var(--bg-primary)] min-h-screen text-[var(--color-primary)] p-4 md:p-6 flex flex-col md:flex-row gap-6 transition-colors duration-300 relative overflow-x-hidden md:overflow-x-visible"
+    class="bg-[var(--bg-primary)] min-h-screen text-[var(--color-primary)] p-4 lg:p-6 flex flex-col lg:flex-row gap-6 transition-colors duration-300 relative overflow-x-hidden lg:overflow-x-visible"
   >
     <!-- Overlay Mobile mode fiels -->
     <div
       id="sidebar-overlay"
-      class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40 md:hidden"
+      class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40 lg:hidden"
     ></div>
 
     <!-- sidebar -->
     <aside
       id="sidebar"
-      class="fixed top-0 bottom-0 right-0 z-50 w-72 bg-[var(--card)] p-5 md:p-6 flex flex-col shadow-2xl md:shadow-sm rounded-none md:rounded-2xl shrink-0 transform translate-x-full transition-transform duration-300 md:translate-x-0 md:sticky md:top-6 md:bottom-auto md:self-start md:h-[calc(100vh-3rem)] overflow-hidden"
+      class="fixed top-0 bottom-0 right-0 z-50 w-72 bg-[var(--card)] p-5 lg:p-6 flex flex-col shadow-2xl lg:shadow-sm rounded-none lg:rounded-2xl shrink-0 transform translate-x-full transition-transform duration-300 lg:translate-x-0 lg:sticky lg:top-6 lg:bottom-auto lg:self-start lg:h-[calc(100vh-3rem)] overflow-hidden"
     >
       <!-- Top Section -->
       <div class="flex items-center justify-between pb-4 shrink-0">
         <!-- Mobile: Quera List -->
-        <span class="md:hidden font-bold text-base text-[var(--color-primary)]">
+        <span class="lg:hidden font-bold text-base text-[var(--color-primary)]">
           کوئرا لیست
         </span>
 
         <!-- Desktop: User Profile -->
-        <div class="hidden md:flex items-center gap-3">
+        <div class="hidden lg:flex items-center gap-3">
           <div
             class="relative w-11 h-11 rounded-full overflow-hidden bg-[var(--btn-bg-muted)] shrink-0"
           >
@@ -58,7 +58,7 @@
         <button
           id="close-sidebar-btn"
           aria-label="بستن منو"
-          class="md:hidden p-1.5 text-[var(--color-primary-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--btn-bg-muted)] rounded-xl transition-colors cursor-pointer"
+          class="lg:hidden p-1.5 text-[var(--color-primary-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--btn-bg-muted)] rounded-xl transition-colors cursor-pointer"
         >
           <svg
             class="w-6 h-6"
@@ -311,7 +311,7 @@
     <main class="flex-1 min-w-0">
       <!-- mobile header -->
       <header
-        class="sticky top-0 z-30 -mt-4 pt-4 -mx-4 px-4 pb-3 bg-[var(--bg-primary)] md:hidden"
+        class="sticky top-0 z-30 -mt-4 pt-4 -mx-4 px-4 pb-3 bg-[var(--bg-primary)] lg:hidden"
       >
         <div
           class="flex items-center justify-between p-4 bg-[var(--card)] rounded-xl shadow-xs relative"
@@ -350,7 +350,7 @@
 
       <!-- mobile profile img and date -->
       <div
-        class="flex md:hidden items-center justify-start gap-3 mt-6 mb-8 px-2 w-full"
+        class="flex lg:hidden items-center justify-start gap-3 mt-6 mb-8 px-2 w-full"
         dir="rtl"
       >
         <!-- profile -->
